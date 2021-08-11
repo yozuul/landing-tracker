@@ -1,10 +1,14 @@
 import { Click, Field } from '../models'
 import { getIP } from '../utils'
-import { curly } from'node-libcurl'
+
+import axios from 'axios'
+import curlirize from 'axios-curlirize'
+curlirize(axios);
+
 import { cURL } from '../config/config.default'
 
 const addFormClick = (data) => {
-   console.log(data);
+
    return new Promise(async (resolve) => {
       try {
          const newForm = await Click.create({
@@ -15,16 +19,24 @@ const addFormClick = (data) => {
          const clickID = newForm.null
 
          for(let field in data.fields) {
-            Field.create({
-               id_form_click: clickID,
-               field_name: field,
-               field_value: data.fields[field]
-            });
+            if(data.fields[field]) {
+               Field.create({
+                  id_form_click: clickID,
+                  field_name: field,
+                  field_value: data.fields[field]
+               });
+            }
          }
 
-         const { statusCode, data, headers } = await curly.get(cURL)
-         console.log(statusCode);
-         console.log(headers);
+         axios
+          .post(cURL.visit, { newClick: data.referer })
+          .then(res => {
+            console.log({ newClick: data.referer });
+            // console.log(res);
+          })
+          .catch(err => {
+            console.log(err);
+          });
 
          resolve({ success: true })
 
@@ -32,6 +44,7 @@ const addFormClick = (data) => {
          console.log(err);
       }
    })
+
 }
 
 export { addFormClick }

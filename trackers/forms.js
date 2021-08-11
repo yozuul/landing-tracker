@@ -1,8 +1,7 @@
 import { fetchData } from '../utils/fetch-data'
 import { server } from '../config/config.default'
 
-const url = `api/addFormClick`;
-// const url = `${server.url}:${server.port}/addFormClick`;
+const url = `${server.url}/api/addFormClick`
 
 class Interceptor {
    constructor(forms, tag) {

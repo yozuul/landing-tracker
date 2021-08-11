@@ -6,7 +6,7 @@ export default {
     uglify()
   ],
    output: {
-     file: 'public/tracker.js',
+     file: './public/tracker.js',
      format: 'cjs'
    },
  };

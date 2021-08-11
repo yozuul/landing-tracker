@@ -1,19 +1,20 @@
 import { Sequelize } from 'sequelize';
 import { db } from '../config/config.default'
-
+console.log(db);
 const connect = [db.database, db.user, db.password]
 
 const sequelize = new Sequelize(...connect, {
   host: db.host,
   port: db.port,
-  dialect: db.dialect
+  dialect: db.dialect,
+  logging: false
 })
 
 try {
   await sequelize.authenticate();
-  console.log('Connect 2 DB');
+  console.log('Database connected');
 } catch (error) {
-  console.error('Error connecting 2 DB:', error);
+  console.error('Database error connecting:', error);
 }
 
 export { sequelize }

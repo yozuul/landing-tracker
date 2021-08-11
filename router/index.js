@@ -1,6 +1,5 @@
 import Router from '@koa/router'
 import { addFormClick, addUserVisit } from '../api'
-// import fs from 'fs'
 
 const router = new Router()
 
@@ -29,23 +28,6 @@ router.post('/addUserVisit', async (ctx) => {
       ctx.body = 'Internal error'
    }
 })
-
-// const publicScript = './public/tracker.js'
-//
-// router.get(publicScript, async (ctx) => {
-//    fs.readFile(publicScript, 'utf8', (err, code) => {
-//       if (err) {
-//          ctx.status = 500
-//          ctx.body = 'Internal error'
-//          throw err
-//       } else {
-//          ctx.body = code
-//          ctx.status = 200
-//       }
-//    })
-//    return
-// })
-
 
 
 export { router }

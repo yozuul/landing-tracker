@@ -7,11 +7,9 @@ const fetchData = async (url, data) => {
             'Content-Type': 'application/json'
          }
       });
-      // const json = await response.json();
-      console.log('Данные отправлены:', response);
-      // console.log('Данные отправлены:', JSON.stringify(json));
+      console.log('Data send:', response);
    } catch (error) {
-      console.error('Ошибка:', error);
+      console.error('Error fetching:', error);
    }
 
 }

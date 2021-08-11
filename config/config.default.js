@@ -1,13 +1,17 @@
 const server = {
-  url: 'http://localhost',
-  port: '3000'
+  url: 'https://donor-domain.ru'
+}
+
+const cURL = {
+  click: 'https://main-domain.ru/admin100/getrequest.php?param=4',
+  visit: 'https://main-domain.ru/admin100/getrequest.php?param=5',
 }
 
 const db = {
   host: 'localhost',
   user: 'root',
   password: '',
-  database: 'cx14726_nodejs',
+  database: 'database_name',
   dialect: 'mysql'
 }
 
@@ -40,7 +44,5 @@ const tables = {
     }
   }
 }
-
-const cURL = 'https://site.ru/admin/getrequest.php?param=1 '
 
 export { db, server, tables, cURL }
