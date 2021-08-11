@@ -26,7 +26,7 @@ npm run rollup
 #Настройка домена
 Подключенный к основному серверу домен обрабатывает POST запросы от скрипта `public/tracker.js` подключаемого на другие сайты, и перенаправляет на localhost:3000 где работает приложение.
 Пример конфига Nginx:
-```
+```nginx
 server {
     location /api/addUserVisit {
         proxy_set_header X-Real-IP $remote_addr;
