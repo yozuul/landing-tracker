@@ -10,6 +10,7 @@ git clone https://github.com/yozuul/landing-tracker.git
 npm i
 ```
 Подключить к серверу домен и настроить SSL
+
 Настроить конфиг config/config.default.js
 - server.url - ваш домен
 - cURL - если при визите или отправке данных из формы, необходимо выполнить cURL запрос
