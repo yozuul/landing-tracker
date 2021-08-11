@@ -97,7 +97,7 @@ npm start
 yarn stop
 ```
 ```
-npm stop
+npm run stop
 ```
 Проверка запущенного процесса:
 ```
