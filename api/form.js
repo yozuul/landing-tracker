@@ -33,7 +33,6 @@ const addFormClick = (data) => {
           .post(cURL.visit, { newClick: data.referer })
           .then(res => {
             console.log({ newClick: data.referer });
-            // console.log(res);
           })
           .catch(err => {
             console.log(err);
