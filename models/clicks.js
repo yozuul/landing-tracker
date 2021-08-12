@@ -21,8 +21,7 @@ const Click = sequelize.define(tables.clicks.name, {
    },
    [tables.clicks.fields.date]: {
       type: DATE,
-      defaultValue: new Date(),
-      allowNull: true
+      allowNull: false
    },
 }, {
    tableName: tables.clicks.name,

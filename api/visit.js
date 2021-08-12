@@ -5,14 +5,15 @@ import axios from 'axios'
 import curlirize from 'axios-curlirize'
 curlirize(axios);
 
-import { cURL } from '../config/config.default'
+import { tables, cURL } from '../config/config.default'
 
 const addUserVisit = (data) => {
 
    return new Promise(async (resolve) => {
       const addData = {
-         referer: data.referer,
-         remote: getIP(data.remote)
+         [tables.visits.fields.referer]: data.referer,
+         [tables.visits.fields.ip]: getIP(data.remote),
+         [tables.visits.fields.date]: new Date()
       }
       try {
          Visit.create(addData);

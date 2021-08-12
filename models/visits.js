@@ -21,8 +21,7 @@ const Visit = sequelize.define(tables.visits.name, {
    },
    [tables.visits.fields.date]: {
       type: DATE,
-      defaultValue: new Date(),
-      allowNull: true
+      allowNull: false
    },
 }, {
    tableName: tables.visits.name,
