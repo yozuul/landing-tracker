@@ -1,11 +1,11 @@
 import { Click, Field } from '../models'
-import { getIP } from '../utils'
 
 import axios from 'axios'
 import curlirize from 'axios-curlirize'
 curlirize(axios);
 
 import { tables, cURL } from '../config/config.default'
+import { getMskTime } from '../utils'
 
 const addFormClick = (data) => {
 
@@ -13,8 +13,8 @@ const addFormClick = (data) => {
       try {
          const newForm = await Click.create({
             [tables.clicks.fields.referer]: data.referer,
-            [tables.clicks.fields.ip]: getIP(data.remote),
-            [tables.clicks.fields.date]: new Date()
+            [tables.clicks.fields.ip]: data.remote,
+            [tables.clicks.fields.date]: getMskTime()
          });
 
          const clickID = newForm.null
@@ -30,9 +30,10 @@ const addFormClick = (data) => {
          }
 
          axios
-          .post(cURL.visit, { newClick: data.referer })
+          .post(cURL.click, { newClick: data.referer })
           .then(res => {
             console.log({ newClick: data.referer });
+            // console.log(res);
           })
           .catch(err => {
             console.log(err);

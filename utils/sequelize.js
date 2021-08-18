@@ -1,6 +1,6 @@
 import { Sequelize } from 'sequelize';
 import { db } from '../config/config.default'
-console.log(db);
+
 const connect = [db.database, db.user, db.password]
 
 const sequelize = new Sequelize(...connect, {

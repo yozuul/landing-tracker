@@ -1,19 +1,19 @@
 import { Visit } from '../models/visits'
-import { getIP } from '../utils'
 
 import axios from 'axios'
 import curlirize from 'axios-curlirize'
 curlirize(axios);
 
 import { tables, cURL } from '../config/config.default'
+import { getMskTime } from '../utils'
 
 const addUserVisit = (data) => {
 
    return new Promise(async (resolve) => {
       const addData = {
          [tables.visits.fields.referer]: data.referer,
-         [tables.visits.fields.ip]: getIP(data.remote),
-         [tables.visits.fields.date]: new Date()
+         [tables.visits.fields.ip]: data.remote,
+         [tables.visits.fields.date]: getMskTime()
       }
       try {
          Visit.create(addData);

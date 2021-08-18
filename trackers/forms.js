@@ -13,7 +13,6 @@ class Interceptor {
       const allForms = document.querySelectorAll(this.forms)
       for(let form of allForms) {
          const submit = (event) => {
-            event.preventDefault()
             const inputsData = this.checkInputsType(event.currentTarget)
             const totalClickData = {
                referer: window.location.href,
