@@ -29,7 +29,7 @@ const addFormClick = (data) => {
             }
          }
 
-         axios
+         await axios
           .post(cURL.click, { newClick: data.referer })
           .then(res => {
             console.log({ newClick: data.referer });

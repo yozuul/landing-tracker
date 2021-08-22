@@ -16,8 +16,8 @@ const addUserVisit = (data) => {
          [tables.visits.fields.date]: getMskTime()
       }
       try {
-         Visit.create(addData);
-         axios
+         await Visit.create(addData);
+         await axios
           .post(cURL.visit, { newVisit: data.referer })
           .then(res => {
             console.log({ newVisit: data.referer });
