@@ -17,13 +17,11 @@
     "@koa/router": "^10.1.0",
     "axios": "^0.21.1",
     "axios-curlirize": "^1.4.0",
+    "dotenv": "^10.0.0",
     "koa": "^2.13.1",
     "koa-body": "^4.2.0",
     "mysql2": "^2.2.5",
     "rollup": "^2.55.1",
     "sequelize": "^6.6.5"
-  },
-  "devDependencies": {
-    "rollup-plugin-uglify": "^6.0.4"
   }
 }

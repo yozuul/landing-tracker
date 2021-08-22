@@ -1,12 +1,9 @@
-import { uglify } from "rollup-plugin-uglify";
+import {} from 'dotenv/config'
 
 export default {
    input: 'trackers/index.js',
-   plugins: [
-    uglify()
-  ],
    output: {
-     file: '../../../var/www/html/node.ogon-ok.ru/html/tracker.js',
+     file: process.env.PUBLIC_TRACKER_SCRIPT_PATH,
      format: 'cjs'
    },
  };

@@ -1,17 +1,21 @@
+import {} from 'dotenv/config'
+
+const env = process.env
+
 const server = {
-  url: 'https://node.ogon-ok.ru'
+  url: env.SERVER_URL
 }
 
 const cURL = {
-  click: 'https://formularoi.com/admin100/getrequest.php?param=4',
-  visit: 'https://formularoi.com/admin100/getrequest.php?param=5',
+  click: env.CURL_CLICK,
+  visit: env.CURL_VISIT,
 }
 
 const db = {
-  host: 'bitrix288.timeweb.ru',
-  user: 'cx14726_nodejs',
-  password: 'nRxge7jckk9B8dW',
-  database: 'cx14726_nodejs',
+  host: env.DB_HOST,
+  user: env.DB_USER,
+  password: env.DB_PASS,
+  database: env.DB_NAME,
   dialect: 'mysql'
 }
 
